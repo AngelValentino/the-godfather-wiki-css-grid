@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  background: #000000;
+  min-width: fit-content;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*NAVIGATION MENU*/
+
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #ffcf40;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+header img {
+  width: 100px;
+  object-fit: cover;
+  margin-left: 3vw;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+/*MAIN*/
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 200px 60px;
+  color: white;
+}
+
+/*WELCOME SECTION*/
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  column-gap: 60px;
+}
+.welcome img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcome h1 {
+  margin: 0 0 20px;
+  font-size: 2.5rem;
+}
+
+.welcome p {
+  line-height: 1.8rem;
+}
+
+.welcome img {
+  grid-column: span 2;
+}
+
+.welcome-text {
+  grid-column: span 2;
+  text-align: center;
+  padding: 50px;
+}
+
+/*FILMS TITLE*/
+
+main > h2 {
+  text-align: center;
+  margin: 100px 0 0;
+}
+
+/*FILMS SECTION*/
+
+.movies {
+  margin: 50px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+}
+
+.movies a:nth-of-type(-n + 3) {
+  display: none;
+}
+
+.ratio1-img {
+  aspect-ratio: 2 / 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/*GALLERY SECTION*/
+
+.gallery {
+    margin: 50px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    background-color: #beb598;
+    padding: 30px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.25s;
+}
+.gallery div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.gallery > a {
+    text-decoration: none;
+    color: inherit;
+    text-align: end;
+    display: inline-block;
+    background-color: rgb(134, 132, 111);
+    justify-self: end;
+    grid-column: span 2;
+    padding: 10px;
+}
+
+/*FOOTER*/
+
+footer {
+  text-align: center;
+  padding: 50px;
+  background-color: #ffdc73;
+}
+
+footer a {
+  color: inherit;
+}
+
+/*MEDIA QUIERIES*/
+
+@media screen and (max-width: 600px) {
+  /*NAVIGATION MENU*/
+  header {
+    padding: 10px 30px;
+    row-gap: 10px;
+  }
+
+  header img {
+    grid-column: span 2;
+  }
+
+  header nav {
+    display: block;
+    margin-left: 3vw;
+    grid-column: span 2;
+  }
+
+  header nav a {
+    margin-right: 4vw;
+  }
+}
+
+/*FILMS SECTION*/
+
+@media screen and (max-width: 1000px) {
+  .movies {
+    gap: 50px;
+    justify-items: center;
+  }
+
+  .full-lenght {
+    grid-column: span 3;
+  }
+
+  .ratio1-img {
+    max-width: 500px;
+  }
+}
+
+/*GALLERY SECTION*/
+
+@media screen and (max-width: 1000px) {
+    .gallery > * {
+        grid-column: span 2;
+    }
+
+    .vertical.vertical2 {
+        grid-row: span 1;
+        max-height: 1000px;
+    }
+
+    .gallery > a {
+        justify-self: center;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .gallery div {
+        max-height: 90vh!important;
+    }
+}
+
+/*NAVIGATION MENU FOR TILTED DEVICES*/
+
+@media screen and (max-height: 450px) {
+    header {
+        position: static;
+    }
+
+    main {
+        padding: 80px 60px 200px;
+    }
+}
+
+@media screen and (max-height: 450px) and (max-width: 350px) {
+    main {
+        padding: 60px 30px 200px !important;
+    }
+}
+
+@media screen and (max-height: 450px) and (max-width: 750px) {
+    main {
+        padding: 70px 30px 200px;
+    }
+}
+
+@media screen and (max-width: 293px) {
+    main {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .welcome h1 {
+        font-size: 1.5rem !important;
+      }
+}
+
+/*FILMS SECTION FOR TILTED DEVICES*/
+
+@media screen and (max-height: 600px) {
+  .movies a:nth-last-of-type(-n + 3) {
+    display: none;
+  }
+
+  .movies a:nth-of-type(-n + 3) {
+    display: block;
+  }
+
+  .ratio2-img {
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/*MAIN PADDING / MARGIN / FONT SIZE*/
+
+@media screen and (max-width: 750px) and (min-height: 450px) {
+  main {
+    padding: 200px 30px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .welcome-text {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .welcome h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text {
+    padding: 20px;
+  }
+
+  .welcome {
+    row-gap: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .welcome-text {
+    padding: 10px;
+  }
+
+.gallery > a h2 {
+    font-size: 1.35rem;
+}
+}
+
+@media screen and (max-width: 316px) {
+  .welcome h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+    .gallery {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .gallery {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 293px) and (min-height: 450px) {
+  .welcome h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 200px 10px;
+  }
+
+  .movies {
+    padding: 10px;
+  }
+}
+
+/*ANIMATIONS FOR DEVICES WITH MAIN INPUT HOVER*/
+
+@media screen and (hover: hover) {
+    /*NAVIGATION MENU*/
+    header nav a {
+        transition: color 0.10s;
+    }
+
+    header nav a:hover {
+        color: white;
+    }
+
+    /*FILMS SECTION*/
+    .ratio1-img:hover {
+        box-shadow: 3px 3px rgba(255, 238, 0, 0.753);
+        cursor: pointer;
+    }
+
+    .ratio2-img:hover {
+        box-shadow: 5px 5px rgba(255, 238, 0, 0.753);
+        cursor: pointer;
+    }
+
+    /*GALLERY SECTION*/
+    .gallery > a {
+        transition: background-color 0.10s;
+    }
+    
+    .gallery > a:hover {
+        background-color: rgba(196, 185, 43, 0.753);
+        cursor: pointer;
+    }
+
+    .gallery img {
+        transition: transform 0.25s;
+    }
+
+    .gallery img:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    /*FOOTER*/
+    footer a:hover {
+        color: #fff;
+      }
+
+}
+
+/*ANIMATIONS FOR DEVICES THAT THEIR MAIN INPUT IS NOT HOVER*/
+@media screen and (hover: none) {
+    header nav a:active {
+        color: white
+    }
+}
+/*IT DOESN'T WORK POPERLY WITHOUT THE USE OF JAVASCRIPT, CAN'T DELAY HYPERLINKS ONLY USING CSS AND HTML
+
+    .movies img:active {
+        box-shadow: 3px 3px rgba(255, 238, 0, 0.753);
+    }
+
+    .gallery img:active {
+        transform: scale(1.1);
+    }
+
+    .gallery > a:active {
+    background-color: rgba(196, 185, 43, 0.753);
+    }
+
+    footer a:active {
+        color: #fff;
+    }
+} */
